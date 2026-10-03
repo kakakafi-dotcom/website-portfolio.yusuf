@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Academic | Yusuf Syafi Hafizha
+</title>
+
+<style>
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+/* BODY */
+
+body{
+    background:#03050b;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+
+/* GRID BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(0,234,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,234,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:45px 45px;
+
+    pointer-events:none;
+
+    z-index:-2;
+}
+
+
+/* GLOW */
+
+body::after{
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    background:#00eaff;
+
+    filter:blur(220px);
+
+    opacity:.05;
+
+    top:-200px;
+    right:-150px;
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+
+/* NAVBAR */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    padding:22px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(3,5,11,.78);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+
+.logo{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+}
+
+
+.logo span{
+
+    color:#00eaff;
+
+    text-shadow:
+        0 0 10px rgba(0,234,255,.7);
+
+}
+
+
+nav a{
+
+    color:#999;
+
+    text-decoration:none;
+
+    margin-left:25px;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+
+nav a:hover{
+
+    color:#00eaff;
+
+    text-shadow:
+        0 0 15px rgba(0,234,255,.7);
+
+}
+
+
+/* CONTAINER */
+
+.container{
+
+    max-width:1050px;
+
+    margin:90px auto;
+
+    padding:0 25px;
+
+}
+
+
+/* TITLE */
+
+.title{
+
+    text-align:center;
+
+    margin-bottom:55px;
+
+    animation:fadeUp 1s ease;
+
+}
+
+
+.title h1{
+
+    font-size:45px;
+
+    letter-spacing:-1px;
+
+}
+
+
+.title h1 span{
+
+    color:#00eaff;
+
+    text-shadow:
+        0 0 20px rgba(0,234,255,.3);
+
+}
+
+
+.title p{
+
+    color:#666;
+
+    margin-top:12px;
+
+    font-size:15px;
+
+}
+
+
+/* DASHBOARD */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+/* BOX */
+
+.box{
+
+    position:relative;
+
+    padding:30px;
+
+    min-height:150px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.018)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    animation:fadeUp 1s ease;
+
+}
+
+
+.box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+
+    height:100px;
+
+    background:#00eaff;
+
+    filter:blur(80px);
+
+    opacity:.04;
+
+    right:-40px;
+
+    top:-40px;
+
+}
+
+
+.box:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0,234,255,.45);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        0 0 25px rgba(0,234,255,.05);
+
+}
+
+
+.box small{
+
+    display:block;
+
+    color:#00eaff;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    margin-bottom:12px;
+
+}
+
+
+.box h2{
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+}
+
+
+.box p{
+
+    color:#888;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+
+/* FULL BOX */
+
+.full{
+
+    grid-column:1 / -1;
+
+}
+
+
+/* INTEREST */
+
+.interest-list{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+
+.interest{
+
+    position:relative;
+
+    padding:22px 12px;
+
+    border-radius:14px;
+
+    text-align:center;
+
+    background:
+        rgba(0,234,255,.025);
+
+    border:
+        1px solid rgba(0,234,255,.12);
+
+    color:#aaa;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+
+.interest:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.02);
+
+    color:white;
+
+    border-color:#00eaff;
+
+    background:
+        rgba(0,234,255,.07);
+
+    box-shadow:
+        0 10px 35px rgba(0,234,255,.1);
+
+}
+
+
+.interest span{
+
+    display:block;
+
+    font-size:32px;
+
+    margin-bottom:12px;
+
+}
+
+
+.interest strong{
+
+    font-size:13px;
+
+}
+
+
+/* DIGITAL PROFILE */
+
+.digital-profile{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+
+.profile-item{
+
+    padding:20px;
+
+    border-radius:13px;
+
+    background:#070c13;
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    transition:.3s;
+
+}
+
+
+.profile-item:hover{
+
+    border-color:
+        rgba(0,234,255,.4);
+
+    transform:
+        translateY(-5px);
+
+}
+
+
+.profile-item small{
+
+    color:#666;
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+}
+
+
+.profile-item h3{
+
+    margin-top:8px;
+
+    color:#ddd;
+
+    font-size:15px;
+
+}
+
+
+/* TABLE */
+
+.table-box{
+
+    margin-top:25px;
+
+    overflow-x:auto;
+
+}
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+th,
+td{
+
+    padding:16px;
+
+    text-align:left;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+}
+
+
+th{
+
+    color:#00eaff;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+}
+
+
+td{
+
+    color:#aaa;
+
+    font-size:14px;
+
+}
+
+
+tr:hover{
+
+    background:
+        rgba(0,234,255,.025);
+
+}
+
+
+tr:hover td{
+
+    color:#fff;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+    margin-top:100px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#555;
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+}
+
+
+footer span{
+
+    color:#00eaff;
+
+}
+
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+
+    nav a{
+
+        margin:0 6px;
+
+    }
+
+
+    .dashboard{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .full{
+
+        grid-column:auto;
+
+    }
+
+
+    .interest-list{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .digital-profile{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .title h1{
+
+        font-size:35px;
+
+    }
+
+
+    .interest-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .box{
+
+        padding:25px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header>
+
+    <div class="logo">
+
+        <span></span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="profil.html">
+            Profile
+        </a>
+
+        <a href="mahasiswa.html">
+            Academic
+        </a>
+
+        <a href="akademik.html">
+            Activity
+        </a>
+
+        <a href="kontak.html">
+            Future
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+
+    <div class="title">
+
+        <h1>
+
+            Academic
+            <span>Profile</span>
+
+        </h1>
+
+
+        <p>
+
+            Informasi pendidikan dan minat teknologi saya
+
+        </p>
+
+    </div>
+
+
+    <div class="dashboard">
+
+
+        <!-- STUDENT -->
+
+        <div class="box">
+
+            <small>
+                STUDENT
+            </small>
+
+
+            <h2>
+                Yusuf Syafi Hafizha
+            </h2>
+
+
+            <p>
+                Mahasiswa Aktif
+            </p>
+
+        </div>
+
+
+        <!-- PROGRAM STUDY -->
+
+        <div class="box">
+
+            <small>
+                PROGRAM STUDY
+            </small>
+
+
+            <h2>
+                Pendidikan Teknik Informatika dan Komputer
+
+
+            </h2>
+
+
+            <p>
+                Bidang pendidikan yang sedang saya tempuh.
+            </p>
+
+        </div>
+
+
+        <!-- NIM -->
+
+        <div class="box">
+
+            <small>
+                STUDENT ID
+            </small>
+
+
+            <h2>
+                2505090090
+            </h2>
+
+
+            <p>
+                Nomor Induk Mahasiswa
+            </p>
+
+        </div>
+
+
+        <!-- ANGKATAN -->
+
+        <div class="box">
+
+            <small>
+                YEAR OF ENTRY
+            </small>
+
+
+            <h2>
+                2025
+            </h2>
+
+
+            <p>
+                Tahun pertama saya memulai pendidikan kuliah.
+            </p>
+
+        </div>
+
+
+        <!-- INTEREST -->
+
+        <div class="box full">
+
+            <small>
+                INTEREST & FOCUS
+            </small>
+
+
+            <h2>
+                My IT Interests
+            </h2>
+
+
+            <p>
+                Beberapa bidang teknologi informasi
+                yang menarik bagi saya dan ingin saya
+                kembangkan lebih dalam.
+            </p>
+
+
+            <div class="interest-list">
+
+
+                <div class="interest">
+
+                    <span>
+                        🌐
+                    </span>
+
+                    <strong>
+                        Web Development
+                    </strong>
+
+                </div>
+
+
+                <div class="interest">
+
+                    <span>
+                        🗄️
+                    </span>
+
+                    <strong>
+                        Database
+                    </strong>
+
+                </div>
+
+
+                <div class="interest">
+
+                    <span>
+                        🤖
+                    </span>
+
+                    <strong>
+                        Artificial Intelligence
+                    </strong>
+
+                </div>
+
+
+                <div class="interest">
+
+                    <span>
+                        🔐
+                    </span>
+
+                    <strong>
+                        Cyber Security
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- DIGITAL PROFILE -->
+
+        <div class="box full">
+
+            <small>
+                DIGITAL PROFILE
+            </small>
+
+
+            <h2>
+                My Personal Focus
+            </h2>
+
+
+            <p>
+                Hal-hal yang ingin saya kembangkan
+                selama menjalani pendidikan.
+            </p>
+
+
+            <div class="digital-profile">
+
+
+                <div class="profile-item">
+
+                    <small>
+                        SKILL
+                    </small>
+
+                    <h3>
+                        Programming
+                    </h3>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <small>
+                        INTEREST
+                    </small>
+
+                    <h3>
+                        Technology
+                    </h3>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <small>
+                        GOAL
+                    </small>
+
+                    <h3>
+                        IT Professional
+                    </h3>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- ACADEMIC INFORMATION -->
+
+        <div class="box full">
+
+            <small>
+                ACADEMIC INFORMATION
+            </small>
+
+
+            <h2>
+                Education Overview
+            </h2>
+
+
+            <div class="table-box">
+
+                <table>
+
+                    <tr>
+
+                        <th>
+                            CATEGORY
+                        </th>
+
+                        <th>
+                            INFORMATION
+                        </th>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Status
+                        </td>
+
+                        <td>
+                            Mahasiswa Aktif
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Focus
+                        </td>
+
+                        <td>
+                            Information Technology
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Main Interest
+                        </td>
+
+                        <td>
+                            Web Development
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Future Goal
+                        </td>
+
+                        <td>
+                            IT Professional
+                        </td>
+
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026
+
+    <span>
+        Yusuf Syafi Hafizha
+    </span>
+
+    · Academic Profile
+</footer>
+
+
+</body>
+
+</html>
