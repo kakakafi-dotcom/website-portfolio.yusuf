@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home | Yusuf Syafi Hafizha</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#03050b;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(rgba(0,234,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,234,255,.025) 1px,transparent 1px);
+    background-size:45px 45px;
+    pointer-events:none;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00eaff;
+    filter:blur(220px);
+    opacity:.05;
+    top:-200px;
+    right:-150px;
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    padding:22px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(3,5,11,.78);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.logo span{
+    color:#00eaff;
+    text-shadow:0 0 10px rgba(0,234,255,.7);
+}
+
+nav a{
+    color:#999;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00eaff;
+    text-shadow:0 0 15px rgba(0,234,255,.7);
+}
+
+/* HERO */
+
+.hero{
+    min-height:calc(100vh - 80px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp 1s ease;
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 18px;
+    border:1px solid rgba(0,234,255,.3);
+    border-radius:50px;
+    color:#00eaff;
+    font-size:11px;
+    letter-spacing:3px;
+    margin-bottom:25px;
+    background:rgba(0,234,255,.04);
+}
+
+.hero h1{
+    font-size:65px;
+    line-height:1.1;
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    color:#00eaff;
+    text-shadow:0 0 30px rgba(0,234,255,.4);
+}
+
+.hero p{
+    max-width:650px;
+    margin:25px auto;
+    color:#888;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* BUTTON */
+
+.buttons{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    margin:7px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:13px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#00eaff;
+    color:#03050b;
+    font-weight:bold;
+    box-shadow:0 0 25px rgba(0,234,255,.15);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 35px rgba(0,234,255,.35);
+}
+
+.btn-secondary{
+    color:#aaa;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.btn-secondary:hover{
+    color:#00eaff;
+    border-color:#00eaff;
+    transform:translateY(-4px);
+}
+
+/* FEATURES */
+
+.features{
+    max-width:1050px;
+    margin:0 auto 80px;
+    padding:0 25px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    padding:30px;
+    border-radius:18px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.018)
+        );
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(0,234,255,.45);
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+
+.card span{
+    font-size:32px;
+}
+
+.card h3{
+    margin:18px 0 10px;
+    font-size:19px;
+}
+
+.card p{
+    color:#777;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+    padding:30px;
+    text-align:center;
+    color:#555;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+footer span{
+    color:#00eaff;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0 6px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <span></span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="profil.html">Profile</a>
+
+        <a href="mahasiswa.html">Academic</a>
+
+        <a href="akademik.html">Activity</a>
+
+        <a href="kontak.html">Future</a>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            DIGITAL PORTFOLIO
+        </div>
+
+        <h1>
+            Yusuf Syafi<br>
+            <span>Hafizha</span>
+        </h1>
+
+        <p>
+            Selamat datang di website personal saya.
+            Website ini berisi informasi mengenai profil,
+            pendidikan, aktivitas, minat teknologi, dan
+            rencana masa depan saya di bidang teknologi informasi.
+        </p>
+
+        <div class="buttons">
+
+            <a href="profil.html" class="btn btn-primary">
+                VIEW PROFILE
+            </a>
+
+            <a href="mahasiswa.html" class="btn btn-secondary">
+                ACADEMIC PROFILE
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="card">
+
+        <span>👤</span>
+
+        <h3>
+            Personal Profile
+        </h3>
+
+        <p>
+            Informasi mengenai identitas dan profil pribadi
+            sebagai seorang mahasiswa.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <span>💻</span>
+
+        <h3>
+            Technology
+        </h3>
+
+        <p>
+            Ketertarikan saya terhadap dunia teknologi,
+            programming, database dan pengembangan website.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <span>🚀</span>
+
+        <h3>
+            Future Goal
+        </h3>
+
+        <p>
+            Mengembangkan kemampuan teknologi dan menjadi
+            seorang profesional di bidang IT.
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+
+    © 2026
+    <span>Yusuf Syafi Hafizha</span>
+    · Digital Portfolio
+
+</footer>
+
+</body>
+</html>
