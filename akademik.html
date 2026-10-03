@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Activity | Yusuf Syafi Hafizha
+</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#03050b;
+    color:white;
+    min-height:100vh;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(0,234,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,234,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:45px 45px;
+
+    pointer-events:none;
+    z-index:-2;
+}
+
+/* NAVBAR */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    padding:22px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(3,5,11,.78);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.logo span{
+    color:#00eaff;
+}
+
+nav a{
+    color:#999;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00eaff;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1000px;
+    margin:90px auto;
+    padding:0 25px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.title h1{
+    font-size:45px;
+}
+
+.title h1 span{
+    color:#00eaff;
+}
+
+.title p{
+    color:#666;
+    margin-top:12px;
+}
+
+/* TIMELINE */
+
+.timeline{
+    position:relative;
+    max-width:800px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+
+    left:20px;
+    top:0;
+    bottom:0;
+
+    width:1px;
+
+    background:rgba(0,234,255,.3);
+}
+
+.item{
+    position:relative;
+
+    padding-left:65px;
+
+    margin-bottom:35px;
+
+    animation:fadeUp 1s ease;
+}
+
+.dot{
+    position:absolute;
+
+    left:11px;
+    top:8px;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:#03050b;
+
+    border:2px solid #00eaff;
+
+    box-shadow:
+        0 0 15px rgba(0,234,255,.5);
+}
+
+.content{
+    padding:28px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.018)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+}
+
+.content:hover{
+    transform:translateX(7px);
+
+    border-color:
+        rgba(0,234,255,.4);
+}
+
+.content small{
+    color:#00eaff;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.content h2{
+    margin:12px 0;
+    font-size:20px;
+}
+
+.content p{
+    color:#888;
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* SKILLS */
+
+.skills{
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.skill{
+    padding:30px;
+
+    border-radius:18px;
+
+    background:#070c13;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    text-align:center;
+
+    transition:.4s;
+}
+
+.skill:hover{
+    transform:translateY(-7px);
+
+    border-color:#00eaff;
+}
+
+.skill span{
+    font-size:35px;
+}
+
+.skill h3{
+    margin-top:15px;
+}
+
+.skill p{
+    color:#777;
+    font-size:13px;
+    line-height:1.6;
+    margin-top:8px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:100px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#555;
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+}
+
+footer span{
+    color:#00eaff;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0 6px;
+    }
+
+    .skills{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <span></span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="profil.html">
+            Profile
+        </a>
+
+        <a href="mahasiswa.html">
+            Academic
+        </a>
+
+        <a href="akademik.html">
+            Activity
+        </a>
+
+        <a href="kontak.html">
+            Future
+        </a>
+
+    </nav>
+
+</header>
+
+
+<div class="container">
+
+    <div class="title">
+
+        <h1>
+            My <span>Activity</span>
+        </h1>
+
+        <p>
+            Perjalanan belajar dan pengembangan diri
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="item">
+
+            <div class="dot"></div>
+
+            <div class="content">
+
+                <small>
+                    ACADEMIC
+                </small>
+
+                <h2>
+                    Menjalani Pendidikan
+                </h2>
+
+                <p>
+                    Menjalani proses perkuliahan dan mempelajari
+                    berbagai materi yang berkaitan dengan teknologi
+                    informasi.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="dot"></div>
+
+            <div class="content">
+
+                <small>
+                    PROGRAMMING
+                </small>
+
+                <h2>
+                    Belajar Programming
+                </h2>
+
+                <p>
+                    Mengembangkan kemampuan dalam membuat program
+                    menggunakan berbagai bahasa pemrograman serta
+                    memahami dasar-dasar logika pemrograman.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="dot"></div>
+
+            <div class="content">
+
+                <small>
+                    WEB DEVELOPMENT
+                </small>
+
+                <h2>
+                    Membuat Website
+                </h2>
+
+                <p>
+                    Mempelajari HTML, CSS dan teknologi web untuk
+                    membuat website yang menarik, responsif dan
+                    dapat digunakan oleh pengguna.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="dot"></div>
+
+            <div class="content">
+
+                <small>
+                    SELF DEVELOPMENT
+                </small>
+
+                <h2>
+                    Pengembangan Diri
+                </h2>
+
+                <p>
+                    Terus belajar dan mencoba berbagai teknologi
+                    baru untuk meningkatkan kemampuan dan pengalaman
+                    di bidang IT.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="skills">
+
+
+        <div class="skill">
+
+            <span>
+                💻
+            </span>
+
+            <h3>
+                Programming
+            </h3>
+
+            <p>
+                Mengembangkan kemampuan logika dan pemrograman.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span>
+                🌐
+            </span>
+
+            <h3>
+                Web Development
+            </h3>
+
+            <p>
+                Membuat dan mengembangkan website.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span>
+                📚
+            </span>
+
+            <h3>
+                Learning
+            </h3>
+
+            <p>
+                Terus belajar untuk meningkatkan kemampuan.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026
+
+    <span>
+        Yusuf Syafi Hafizha
+    </span>
+
+    · Activity
+
+</footer>
+
+</body>
+
+</html>
